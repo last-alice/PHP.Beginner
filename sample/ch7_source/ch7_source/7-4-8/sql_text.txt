@@ -1,0 +1,1 @@
+SELECT * FROM dat_sales,dat_sales_product WHERE dat_sales.code=dat_sales_product.code_sales
