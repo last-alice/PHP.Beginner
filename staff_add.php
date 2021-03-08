@@ -6,16 +6,16 @@
 </head>
 <body>
 
-スタッフ追加<by>
-<by>
+<by>スタッフ追加<by/>
+<by><by/>
 <form method="POST" action="staff_add_check.php">
-スタッフ名を入力してください。<by>
-<input type="text" name="name" style="width:200px;"><by>
-パスワードを入力してください。<by>
-<input type="password" name="pass" style="width:100px ;"><by>
-パスワードをもう一度入力してください。<by>
-<input type="password" name="pass2" style="width:100px ;"><by>
-<by>
+<by>スタッフ名を入力してください。<by/>
+<by><input type="text" name="name" style="width:200px;"><by/>
+<by>パスワードを入力してください。<by/>
+<by><input type="password" name="pass" style="width:100px ;"><by/>
+<by>パスワードをもう一度入力してください。<by/>
+<by><input type="password" name="pass2" style="width:100px ;"><by/>
+<by><by/>
 <input type="button" onclick="history.back()" value="戻る">
 <input type="submit" value="OK">
 </form>
