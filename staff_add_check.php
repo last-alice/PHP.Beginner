@@ -5,6 +5,7 @@
 <title>ろくまる農園</title>
 </head>
 <body>
+
 <?php
 
 $staff_name=$_POST['name'];
@@ -55,7 +56,6 @@ else
 }
 
 ?>
-
 
 </body>
 </html>
