@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title> ろくまる農園</title>
-</head>
-<body>
-
 <?php
 
 try
@@ -17,7 +9,7 @@ $staff_pass=$_POST['pass'];
 $staff_name=htmlspecialchars($staff_name,ENT_QUOTES,'UTF-8');
 $staff_pass=htmlspecialchars($staff_pass,ENT_QUOTES,'UTF-8');
 
-$dsn='mysql:dbname=shop;host=localhost;charset=utf8';
+$dsn='mysql:dbname=shop;host=localhost:8888;charset=utf8';
 $user='root';
 $password='';
 $dbh=new PDO($dsn,$user,$password);
@@ -42,6 +34,14 @@ catch (Exception $e)
 }
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> ろくまる農園</title>
+</head>
+<body>
 
 <a href="staff_list.php"> 戻る</a>
 

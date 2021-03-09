@@ -11,6 +11,9 @@
 $staff_name=$_POST['name'];
 $staff_pass=$_POST['pass'];
 $staff_pass2=$_POST['pass2'];
+var_dump($staff_name);
+var_dump($staff_pass);
+var_dump($staff_pass2);
 
 $staff_name=htmlspecialchars($staff_name,ENT_QUOTES,'UTF-8');
 $staff_pass=htmlspecialchars($staff_pass,ENT_QUOTES,'UTF-8');
