@@ -18,7 +18,8 @@ $dbh = new PDO($dsn, $user, $password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 $sql='SELECT name FROM mst_staff WHERE 1';
-$stmt=$dbh->prepare($spq);
+$stmt=$dbh->prepare($sql);
+
 $stmt->execute();
 
 $dbh=null;
@@ -32,14 +33,15 @@ if($rec==false)
   {
     break;
   }
-print$rec['name'];
-print'<br>';
+print $rec['name'];
+print '<br>';
 }
 
 }
 catch(Exception $e)
 {
   print 'ただいま障害により大変ご迷惑をお掛けしております。';
+  var_dump($e);
 	exit();
 }
 
