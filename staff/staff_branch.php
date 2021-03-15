@@ -2,12 +2,13 @@
 
 	if (isset($_POST['edit'])==true)
 	{
-		print'修正ボタンが押された';
+		header('Location:staff_edit.php');
+		exit();
 	}
 
 	if (isset($_POST['delete'])==true)
 	{
-		print'削除ボタンが押された';
+		header('Location:staff_delete.php');
 	}
 
 ?>
