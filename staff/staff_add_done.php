@@ -24,15 +24,15 @@ $password='';
 $dbh = new PDO($dsn, $user, $password);
 //var_dump("koko");
 $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-var_dump("3");
+//var_dump("3");
 $sql='INSERT INTO mst_staff (name,password) VALUES (?,?)';
 $stmt=$dbh->prepare($sql);
 $data[]=$staff_name;
 $data[]=$staff_pass;
 $stmt->execute($data);
-var_dump("4");
+//var_dump("4");
 $dbh=null;
-var_dump("5");
+//var_dump("5");
 print $staff_name;
 print 'さんを追加しました。<br>';
 
@@ -40,7 +40,7 @@ print 'さんを追加しました。<br>';
 catch (Exception $e)
 {
 	print 'ただいま障害により大変ご迷惑をお掛けしております。';
-	var_dump($e);
+	//var_dump($e);
 	exit();
 }
 
