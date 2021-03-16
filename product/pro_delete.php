@@ -11,7 +11,7 @@
 try
 {
 
-	$pro_code=$_GET['procode'];
+	$pro_code = $_GET['procode'];
 
 	$dsn='mysql:dbname=shop;host=localhost;charset=utf8';
 	$user='root';
@@ -19,14 +19,13 @@ try
 	$dbh = new PDO($dsn,$user,$password);
 	$dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-	$sql = 'SELECT name,price FROM mst_product WHERE code=?';
+	$sql = 'SELECT name FROM mst_product WHERE code=?';
 	$stmt = $dbh->prepare($sql);
 	$data[] = $pro_code;
 	$stmt->execute($data);
 
 	$rec = $stmt->fetch(PDO::FETCH_ASSOC);
-	$pro_name = $rec['name'];
-	$pro_price = $rec['price'];
+	$pro_code = $rec['name'];
 
 	$dbh = null;
 
@@ -39,19 +38,18 @@ catch(Exception $e)
 
 ?>
 
-	商品修正<br>
-			<br>
+	商品削除<br>
+		<br>
 	商品コード<br>
-		<?php print $pro_code; ?>
-			<br>
-			<br>
-		<form method = "POST" action = "pro_edit_check.php">
-		<input type = "hidden" name = "code" value = "<?php print $pro_code; ?>">
+	<?php print $pro_code; ?>
+		<br>
 	商品名<br>
-	<input type = "text" name = "name" style = "width:200px" value = "<?php print $pro_name; ?>"><br>
-	価格<br>
-	<input type = "text" name = "price" style = "width:50px" value = "<?php print $pro_price; ?>">円<br>
-			<br>
+	<?php print $pro_name; ?>
+		<br>
+	この商品を削除してよろしいですか？<br>
+		<br>
+	<form method = "post" action = "pro_delete_done.php">
+	<input type = "hidden" name = "code" value = "<?php print $pro_code; ?>">
 	<input type = "button" onclick = "history.back()" value = "戻る">
 	<input type = "submit" value = "OK">
 </form>

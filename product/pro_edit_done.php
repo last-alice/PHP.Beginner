@@ -40,7 +40,6 @@ try
 catch(Exception$e)
 {
 	print'ただいま障害により大変ご迷惑をお掛けしております。';
-	var_dump($e);
 	exit();
 }
 
