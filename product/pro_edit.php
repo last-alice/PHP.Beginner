@@ -11,24 +11,24 @@
 try
 {
 
-$staff_code=$_GET['procode'];
+	$staff_code=$_GET['procode'];
 
-$dsn='mysql:dbname=shop;host=localhost;charset=utf8';
-$user='root';
-$password='';
-$dbh = new PDO($dsn,$user,$password);
-$dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+	$dsn='mysql:dbname=shop;host=localhost;charset=utf8';
+	$user='root';
+	$password='';
+	$dbh = new PDO($dsn,$user,$password);
+	$dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-$sql = 'SELECT name,price FROM mst_product WHERE code=?';
-$stmt = $dbh->prepare($sql);
-$data[] = $staff_code;
-$stmt->execute($data);
+	$sql = 'SELECT name,price FROM mst_product WHERE code=?';
+	$stmt = $dbh->prepare($sql);
+	$data[] = $staff_code;
+	$stmt->execute($data);
 
-$rec = $stmt->fetch(PDO::FETCH_ASSOC);
-$pro_name = $rec['name'];
-$pro_price = $rec['price'];
+	$rec = $stmt->fetch(PDO::FETCH_ASSOC);
+	$pro_name = $rec['name'];
+	$pro_price = $rec['price'];
 
-$dbh = null;
+	$dbh = null;
 
 }
 catch(Exception $e)

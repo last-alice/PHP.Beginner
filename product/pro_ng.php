@@ -7,7 +7,7 @@
 <body>
 
     商品が選択されてません。<br>
-    <a href="pro_list.php">戻る</a>
+    <a href = "pro_list.php">戻る</a>
 
 </body>
 </html>
