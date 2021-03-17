@@ -8,7 +8,7 @@ if(isset($_POST['disp'])==true)
 		exit();
 	}
 	$pro_code = $_POST['procode'];
-	header('Location:pro_disp.php?procode ='.$pro_code);
+	header('Location:pro_disp.php?procode='.$pro_code);
 	exit();
 }
 
@@ -26,7 +26,7 @@ if(isset($_POST['edit'])==true)
 		exit();
 	}
 	$pro_code = $_POST['procode'];
-	header('Location:pro_edit.php?procode = '.$pro_code);
+	header('Location:pro_edit.php?procode='.$pro_code);
 	exit();
 }
 
@@ -38,7 +38,7 @@ if(isset($_POST['delete'])==true)
 		exit();
 	}
 	$pro_code = $_POST['procode'];
-	header('Location:pro_delete.php?procode = '.$pro_code);
+	header('Location:pro_delete.php?procode='.$pro_code);
 	exit();
 }
 
