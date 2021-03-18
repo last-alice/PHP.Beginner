@@ -4,7 +4,7 @@
     if(isset($_SESSION['login'])==false)
     {
         print 'ログインされていません。<br>';
-        print '<a href = "../staff_login/staff_login.html">ログイン画面へ</a>';
+        print '<a href="../staff_login/staff_login.html">ログイン画面へ</a>';
         exit();
     }
     else
@@ -25,9 +25,11 @@
 
     ショップ管理トップメニュー<br>
         <br>
-    <a href = "../staff/staff_list.php">スタッフ管理</a><br>
+    <a href="../staff/staff_list.php">スタッフ管理</a><br>
         <br>
-    <a href = "../product/pro_list.php">商品管理</a><br>
+    <a href="../product/pro_list.php">商品管理</a><br>
+        <br>
+    <a href="staff_logout.php">ログアウト</a><br>
 
 </body>
 </html>
