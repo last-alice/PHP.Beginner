@@ -16,6 +16,12 @@
     $hoshi['M45'] = 'すばる';
     $hoshi['M57'] = 'ドーナツ星雲';
 
+    foreach($hoshi as $key => $val)
+{
+    print $key.'は'.$val;
+    print '<br>';
+}
+
     print 'あなたが選んだ星は、';
     print $hoshi[$mbango];
 
