@@ -31,6 +31,7 @@ try
 {
 
     $cart=$_SESSION['cart'];
+    $max=count($cart);
 
     $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
     $user='root';
@@ -60,6 +61,13 @@ try
     }
     $dbh=null;
 
+    for($i=0;$i<$max;$i++)
+    {
+        print $pro_name[$i];
+        print $pro_gazou[$i];
+        print $pro_price[$i].'円';
+        print '<br>';
+    }
 }
 catch(Exception $e)
 {
