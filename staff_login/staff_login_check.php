@@ -3,11 +3,11 @@
 try
 {
 
-    $staff_code=$_POST['code'];
-    $staff_pass=$_POST['pass'];
+    require_once('../common/common.php');
 
-    $staff_code=htmlspecialchars($staff_code,ENT_QUOTES,'UTF-8');
-    $staff_pass=htmlspecialchars($staff_pass,ENT_QUOTES,'UTF-8');
+	$post=sanitize($_POST);
+    $staff_code=$post['code'];
+    $staff_pass=$post['pass'];
 
     $staff_pass=md5($staff_pass);
 
