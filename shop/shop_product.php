@@ -58,7 +58,7 @@ try
     {
         $disp_gazou='<img src="../product/gazou/'.$pro_gazou_name.'">';
     }
-    print '<a href="shop.php?procode='.$pro_code.'">カートに入れる</a><br><br>';
+    print '<a href="shop_cartin.php?procode='.$pro_code.'">カートに入れる</a><br><br>';
 
 }
 catch(Exception $e)
