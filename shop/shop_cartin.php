@@ -32,14 +32,12 @@ try
 
     $pro_code = $_GET['procode'];
 
+    if(isset($_SESSION['cart'])==true);
+    {
+        $cart=$_SESSION['cart'];
+    }
     $cart[]=$pro_code;
     $_SESSION['cart']=$cart;
-
-    foreach($cart as $key=>$val)
-    {
-        print $val;
-        print '<br>';
-    }
 
 }
 catch(Exception $e)
