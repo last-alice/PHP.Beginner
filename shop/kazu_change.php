@@ -9,6 +9,12 @@
 	$max=$post['max'];
 	for($i=0;$i<$max;$i++)
 	{
+		if(preg_match("/\A[0-9]+\z/",$post['kazu'.$i])==0)
+		{
+			print'数量に誤りがあります。';
+			print'<a href="shop_cartlook.php">カートに戻る</a>';
+			exit();
+		}
 		$kazu[]=$post['kazu'.$i];
 	}
 
