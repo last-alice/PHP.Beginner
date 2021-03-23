@@ -61,6 +61,7 @@ try
 		}
 	}
 	$dbh=null;
+
 }
 catch(Exception $e)
 {
@@ -70,25 +71,25 @@ catch(Exception $e)
 
 ?>
 
-カートの中身<br>
-<br>
+	カートの中身<br>
+	<br>
 	<form method="post" action="kazu_change.php">
 	<?php for($i=0;$i<$max;$i++)
 		{
 	?>
-	<?php print $pro_name[$i]; ?>
-	<?php print $pro_gazou[$i]; ?>
-	<?php print $pro_price[$i]; ?>円
-	<?php print $kazu[$i]; ?>
-	<input type="text" name="kazu<?php print $i;?>" value="<?php print [$i];?>">
-	<br>
+		<?php print $pro_name[$i]; ?>
+		<?php print $pro_gazou[$i]; ?>
+		<?php print $pro_price[$i]; ?>円
+		<input type="text" name="kazu<?php print $i; ?>" value="<?php print $kazu[$i]; ?>">
+		<?php print $pro_price[$i]*$kazu[$i]; ?>円
+		<br>
 <?php
 	}
 ?>
-	<input type="hidden" name="max" value="<?php print $max;?>">
-	<input type="submit" value="数量変更"><br>
-    <input type="button" onclick="history.back()" value="戻る">
-    </form>
+	<input type="hidden" name="max" value="<?php print $max; ?>">
+	<input type="submit" value="数量変更"><br />
+	<input type="button" onclick="history.back()" value="戻る">
+	</form>
 
 </body>
 </html>
