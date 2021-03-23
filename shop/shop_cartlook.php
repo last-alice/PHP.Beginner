@@ -34,14 +34,14 @@ try
 	$kazu=$_SESSION['kazu'];
 	$max=count($cart);
 
-    $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
-    $user='root';
-    $password='';
-    $dbh=new PDO($dsn,$user,$password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+	$dsn='mysql:dbname=shop;host=localhost;charset=utf8';
+	$user='root';
+	$password='';
+	$dbh=new PDO($dsn,$user,$password);
+	$dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    foreach($cart as $key=>$val)
-    {
+	foreach($cart as $key=>$val)
+	{
 		$sql='SELECT code,name,price,gazou FROM mst_product WHERE code=?';
 		$stmt=$dbh->prepare($sql);
 		$data[0]=$val;
@@ -82,12 +82,13 @@ catch(Exception $e)
 		<?php print $pro_price[$i]; ?>円
 		<input type="text" name="kazu<?php print $i; ?>" value="<?php print $kazu[$i]; ?>">
 		<?php print $pro_price[$i]*$kazu[$i]; ?>円
+		<input type="checkbox" name="sakujo<?php print $i; ?>">
 		<br>
 <?php
 	}
 ?>
 	<input type="hidden" name="max" value="<?php print $max; ?>">
-	<input type="submit" value="数量変更"><br />
+	<input type="submit" value="数量変更"><br>
 	<input type="button" onclick="history.back()" value="戻る">
 	</form>
 

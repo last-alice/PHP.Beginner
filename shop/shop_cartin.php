@@ -35,7 +35,7 @@ try
     if(isset($_SESSION['cart'])==true)
     {
         $cart=$_SESSION['cart'];
-        $cart=$_SESSION['kazu'];
+        $kazu=$_SESSION['kazu'];
     }
     $cart[]=$pro_code;
     $kazu[]=1;
@@ -51,9 +51,9 @@ catch(Exception $e)
 
 ?>
 
-カートに追加しました。<br>
-<br>
-<a href="shop_list.php">商品一覧に戻る</a>
+    カートに追加しました。<br>
+    <br>
+    <a href="shop_list.php">商品一覧に戻る</a>
 
 </body>
 </html>
