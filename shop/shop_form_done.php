@@ -70,6 +70,18 @@ try
         $honbun.=$shokei."円\n";
     }
 
+    $sql='INSERT INTO dat_sales(code_member,name,email,postal1,postal2,address,tel) VALUES(?,?,?,?,?,?,?)';
+    $stmt=$dbh->prepare($sql);
+    $data=array();
+    $data[]=0;
+    $data[]=$onamae;
+    $data[]=$email;
+    $data[]=$postal1;
+    $data[]=$postal2;
+    $data[]=$address;
+    $data[]=$tel;
+    $stmt->execute($data);
+
     $dbh=null;
 
     $honbun.="送料は無料です。\n";
