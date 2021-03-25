@@ -91,7 +91,7 @@ try
 
     for($i=0;$i<$max;$i++)
     {
-        $sql='INSERT INFO dat_sales_product(code_sales,code_product,price,quantity) VALUES(?,?,?,?)';
+        $sql='INSERT INTO dat_sales_product(code_sales,code_product,price,quantity) VALUES(?,?,?,?)';
         $stmt=$dbh->prepare($sql);
         $data=array();
         $data[]=$lastcode;
