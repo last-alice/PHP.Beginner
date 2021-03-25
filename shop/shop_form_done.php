@@ -82,6 +82,12 @@ try
     $data[]=$tel;
     $stmt->execute($data);
 
+    $sql='SELECT LAST_INSERT_ID()';
+    $stmt=$dbh->prepare($sql);
+    $stmt->execute();
+    $rec=$stmt->fetch(PDO::FETCH_ASSOC);
+    $lastcode=$rec['LAST_INSERT_ID()'];
+
     $dbh=null;
 
     $honbun.="送料は無料です。\n";
