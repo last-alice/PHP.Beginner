@@ -61,6 +61,7 @@ try
 
         $name=$rec['name'];
         $price=$rec['price'];
+        $kakaku[]=$price;
         $suryo=$kazu[$i];
         $shokei=$price*$suryo;
 
@@ -87,6 +88,18 @@ try
     $stmt->execute();
     $rec=$stmt->fetch(PDO::FETCH_ASSOC);
     $lastcode=$rec['LAST_INSERT_ID()'];
+
+    for($i=0;$i<$max;$i++)
+    {
+        $sql='INSERT INFO dat_sales_product(code_sales,code_product,price,quantity) VALUES(?,?,?,?)';
+        $stmt=$dbh->prepare($sql);
+        $data=array();
+        $data[]=$lastcode;
+        $data[]=$cart[$i];
+        $data[]=$kakaku[$i];
+        $data[]=$kazu[$i];
+        $stmt->execute($data);
+    }
 
     $dbh=null;
 
