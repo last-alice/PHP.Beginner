@@ -23,7 +23,7 @@
 </head>
 <body>
 
-<pre><?php
+<?php
 
 try
 {
@@ -74,35 +74,35 @@ try
 	$csv.="\n";
 	while(true)
 	{
-		$rec=$stmt->fetch(PDO::FETCH_ASSOC);
-		if($rec==false)
+	$rec=$stmt->fetch(PDO::FETCH_ASSOC);
+	if($rec==false)
 		{
 			break;
 		}
-		$csv.=$rec['code'];
-		$csv.=',';
-		$csv.=$rec['date'];
-		$csv.=',';
-		$csv.=$rec['code_member'];
-		$csv.=',';
-		$csv.=$rec['dat_sales_name'];
-		$csv.=',';
-		$csv.=$rec['email'];
-		$csv.=',';
-		$csv.=$rec['postal1'].'-'.$rec['postal2'];
-		$csv.=',';
-		$csv.=$rec['address'];
-		$csv.=',';
-		$csv.=$rec['tel'];
-		$csv.=',';
-		$csv.=$rec['code_product'];
-		$csv.=',';
-		$csv.=$rec['mst_product_name'];
-		$csv.=',';
-		$csv.=$rec['price'];
-		$csv.=',';
-		$csv.=$rec['quantity'];
-		$csv.='\n';
+	$csv.=$rec['code'];
+	$csv.=',';
+	$csv.=$rec['date'];
+	$csv.=',';
+	$csv.=$rec['code_member'];
+	$csv.=',';
+	$csv.=$rec['dat_sales_name'];
+	$csv.=',';
+	$csv.=$rec['email'];
+	$csv.=',';
+	$csv.=$rec['postal1'].'-'.$rec['postal2'];
+	$csv.=',';
+	$csv.=$rec['address'];
+	$csv.=',';
+	$csv.=$rec['tel'];
+	$csv.=',';
+	$csv.=$rec['code_product'];
+	$csv.=',';
+	$csv.=$rec['mst_product_name'];
+	$csv.=',';
+	$csv.=$rec['price'];
+	$csv.=',';
+	$csv.=$rec['quantity'];
+	$csv.="\n";
 	}
 
 	print nl2br($csv);
@@ -111,11 +111,10 @@ try
 	catch (Exception $e)
 	{
 		print 'ただいま障害により大変ご迷惑をお掛けしております。';
-		var_dump($e);
 		exit();
 	}
 
-?></pre>
+?>
 
 <br>
 <a href = "../staff_login/staff_top.php">トップメニューへ</a><br>
