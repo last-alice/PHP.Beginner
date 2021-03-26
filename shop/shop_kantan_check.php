@@ -23,7 +23,7 @@
     $dsn='mysql:dbname=shop;host=localhost;charset=utf8';
     $user='root';
     $password='';
-    $dbh = new PDO($dsn,$user,$password);
+    $dbh=new PDO($dsn,$user,$password);
     $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
     $sql='SELECT name,email,postal1,postal2,address,tel FROM dat_member WHERE code=?';
@@ -34,12 +34,12 @@
 
     $dbh=null;
 
-    $onamae=$post['onamae'];
-    $email=$post['email'];
-    $postal1=$post['postal1'];
-    $postal2=$post['postal2'];
-    $address=$post['address'];
-    $tel=$post['tel'];
+    $onamae=$rec['name'];
+    $email=$rec['email'];
+    $postal1=$rec['postal1'];
+    $postal2=$rec['postal2'];
+    $address=$rec['address'];
+    $tel=$rec['tel'];
 
         print'お名前<br>';
         print$onamae;
@@ -55,11 +55,11 @@
         print$postal2;
         print'<br><br>';
 
-        print'住所';
+        print'住所<br>';
         print$address;
         print'<br><br>';
 
-        print'電話番号';
+        print'電話番号<br>';
         print$tel;
         print'<br><br>';
 
