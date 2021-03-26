@@ -42,25 +42,25 @@
     $tel=$post['tel'];
 
         print'お名前<br>';
-        print'$onamae';
+        print$onamae;
         print'<br><br>';
 
         print'メールアドレス<br>';
-        print'$email';
+        print$email;
         print'<br><br>';
 
         print'郵便番号<br>';
-        print'$postal1';
+        print$postal1;
         print'-';
-        print'$postal2';
+        print$postal2;
         print'<br><br>';
 
         print'住所';
-        print'$address';
+        print$address;
         print'<br><br>';
 
         print'電話番号';
-        print'$tel';
+        print$tel;
         print'<br><br>';
 
         print '<form method="post" action="shop_kantan_done.php">';
